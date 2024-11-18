@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cleriche <cleriche@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:17:53 by cleriche          #+#    #+#             */
-/*   Updated: 2024/11/04 13:26:50 by cleriche         ###   ########.fr       */
+/*   Created: 2024/11/07 12:32:56 by cleriche          #+#    #+#             */
+/*   Updated: 2024/11/07 12:46:07 by cleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <stdio.h>
 
-void	ft_bzero(void *ptr, size_t n)
+int	ft_tolower(int c)
 {
-	unsigned char	*p;
-	size_t			i;
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	else
+		return (c);
+}
 
-	p = (unsigned char *)ptr;
-	i = 0;
-	while (i < n)
+/*int	main(void)
+{
+	char	str[] = "JE suIS 42";
+	int	i = 0;
+
+	printf("str initial = %s\n", str);
+	while (str[i])
 	{
-		p[i] = '\0';
+		str[i] = ft_tolower(str[i]);
 		i++;
 	}
-}
+	printf("str modifie = %s\n", str);
+	return (0);
+}*/

@@ -6,11 +6,13 @@
 /*   By: cleriche <cleriche@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 12:31:13 by cleriche          #+#    #+#             */
-/*   Updated: 2024/11/04 12:34:15 by cleriche         ###   ########.fr       */
+/*   Updated: 2024/11/05 15:54:52 by cleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

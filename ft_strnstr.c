@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cleriche <cleriche@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:17:53 by cleriche          #+#    #+#             */
-/*   Updated: 2024/11/04 13:26:50 by cleriche         ###   ########.fr       */
+/*   Created: 2024/11/07 14:08:38 by cleriche          #+#    #+#             */
+/*   Updated: 2024/11/13 10:21:39 by cleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *ptr, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned char	*p;
-	size_t			i;
+	size_t	i;
+	size_t	j;
 
-	p = (unsigned char *)ptr;
 	i = 0;
-	while (i < n)
+	if (*little == 0)
+		return ((char *)&big[0]);
+	while (i < len && big[i])
 	{
-		p[i] = '\0';
+		j = 0;
+		while (little[j] && (i + j) < len && big[i + j] == little[j])
+			j++;
+		if (little[j] == '\0')
+			return ((char *)&big[i]);
 		i++;
 	}
+	return (NULL);
 }

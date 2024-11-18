@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cleriche <cleriche@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:17:53 by cleriche          #+#    #+#             */
-/*   Updated: 2024/11/04 13:26:50 by cleriche         ###   ########.fr       */
+/*   Created: 2024/11/07 11:49:33 by cleriche          #+#    #+#             */
+/*   Updated: 2024/11/07 12:47:39 by cleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <stdio.h>
+//#include <ctype.h>
 
-void	ft_bzero(void *ptr, size_t n)
+int	ft_toupper(int c)
 {
-	unsigned char	*p;
-	size_t			i;
-
-	p = (unsigned char *)ptr;
-	i = 0;
-	while (i < n)
-	{
-		p[i] = '\0';
-		i++;
-	}
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	else
+		return (c);
 }
+
+/*int	main(void)
+{
+	char	str[] = "je suis";
+	int	i = 0;
+
+	printf("str initial = %s\n", str);
+
+	while (str[i])
+        {
+                str[i] = ft_toupper(str[i]);
+                i++;
+        }
+                
+	printf("str modif = %s\n", str);
+	return (0);
+}*/
