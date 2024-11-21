@@ -6,7 +6,7 @@
 /*   By: cleriche <cleriche@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 11:02:45 by cleriche          #+#    #+#             */
-/*   Updated: 2024/11/21 11:05:11 by cleriche         ###   ########.fr       */
+/*   Updated: 2024/11/21 14:48:17 by cleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	str_n[len] = '\0';
 	if (nb == 0)
-	{
 		str_n[0] = '0';
-		return (str_n);
-	}
 	if (nb < 0)
 	{
 		str_n[0] = '-';
@@ -59,20 +56,3 @@ char	*ft_itoa(int n)
 	}
 	return (str_n);
 }
-
-/*int	main(void)
-{
-	int n = 1234;
-	printf ("n = %s\n", ft_itoa(n));
-	
-	n = -56778;
-	printf("n = %s\n", ft_itoa(n));
-
-	n = 0;
-	printf("n = %s\n", ft_itoa(n));
-
-	n = -2147483648;
-	printf("n = %s\n", ft_itoa(n));
-
-	return (0);
-}*/
