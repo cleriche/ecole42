@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cleriche <cleriche@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/21 11:16:41 by cleriche          #+#    #+#             */
+/*   Updated: 2024/11/21 11:21:57 by cleriche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
@@ -9,13 +21,12 @@
     return (c);
 }*/
 
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char			*new_s;
 	unsigned int	i;
 	unsigned int	len;
-	char	*new_s;
-	
+
 	i = 0;
 	if (!s || !f)
 		return (NULL);
@@ -56,4 +67,3 @@ int main(void)
     free(result);
     return (0);
 }*/
-

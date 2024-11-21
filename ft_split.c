@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cleriche <cleriche@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/21 11:09:04 by cleriche          #+#    #+#             */
+/*   Updated: 2024/11/21 11:14:59 by cleriche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 
-
-static	int safe_malloc(char **array_v, int position, size_t buffer)
+static	int	safe_malloc(char **array_v, int position, size_t buffer)
 {
 	int	i;
 
@@ -18,9 +29,7 @@ static	int safe_malloc(char **array_v, int position, size_t buffer)
 	return (0);
 }
 
-
-
-static size_t count_tokens(char const *s, char c)
+static size_t	count_tokens(char const *s, char c)
 {
 	size_t	count;
 	size_t	inside;
@@ -28,7 +37,7 @@ static size_t count_tokens(char const *s, char c)
 	count = 0;
 	inside = 0;
 	while (*s)
-	{	
+	{
 		if (*s != c && !inside)
 		{
 			count++;
@@ -43,10 +52,10 @@ static size_t count_tokens(char const *s, char c)
 	return (count);
 }
 
-static int fill(char **array_v, char const *s, char c)
+static int	fill(char **array_v, char const *s, char c)
 {
 	size_t	len;
-	int	i;
+	int		i;
 
 	i = 0;
 	while (*s)
@@ -57,7 +66,7 @@ static int fill(char **array_v, char const *s, char c)
 		while (s[len] && s[len] != c)
 			len++;
 		if (len > 0)
-		{	
+		{
 			if (safe_malloc(array_v, i, len + 1))
 				return (1);
 			ft_strlcpy(array_v[i], s, len + 1);
@@ -70,15 +79,15 @@ static int fill(char **array_v, char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t tokens;
-	char **array_v;
-	
+	size_t	tokens;
+	char	**array_v;
+
 	if (!s)
 		return (NULL);
 	tokens = count_tokens(s, c);
 	array_v = ((char **)malloc(sizeof(char *) * (tokens + 1)));
-		if (!array_v)
-			return (NULL);
+	if (!array_v)
+		return (NULL);
 	array_v[tokens] = NULL;
 	if (fill(array_v, s, c))
 		return (NULL);
