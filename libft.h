@@ -6,7 +6,7 @@
 /*   By: cleriche <cleriche@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:27:39 by cleriche          #+#    #+#             */
-/*   Updated: 2024/11/13 15:37:12 by cleriche         ###   ########.fr       */
+/*   Updated: 2024/11/21 13:17:54 by cleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
+
+/* fonctions avec write */
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 #endif //LIBFT_H
