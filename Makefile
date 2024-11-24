@@ -53,7 +53,19 @@ SRC = ft_isalpha.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
+SRC_BONUS = ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c
+
 OBJ = $(SRC:.c=.o)
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 	
 # Règle par défaut
 all: $(NAME)
@@ -61,13 +73,16 @@ all: $(NAME)
 # Création de la bibliothèque
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
+
+bonus: $(NAME) $(OBJ_BONUS)
+	ar rcs $(NAME) $(OBJ_BONUS)
 	
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Nettoyage des fichiers objets
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJ_BONUS)
 	
 # Nettoyage complet (objets et bibliothèque)
 fclean: clean
@@ -77,4 +92,4 @@ fclean: clean
 re: fclean all
 
 # Déclaration des cibles phony
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
