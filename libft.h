@@ -6,7 +6,7 @@
 /*   By: cleriche <cleriche@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:27:39 by cleriche          #+#    #+#             */
-/*   Updated: 2024/11/21 13:17:54 by cleriche         ###   ########.fr       */
+/*   Updated: 2024/11/25 09:52:43 by cleriche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 /* structure lists */
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -77,5 +77,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif //LIBFT_H

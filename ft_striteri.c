@@ -1,16 +1,21 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cleriche <cleriche@student.42nice.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/25 09:49:49 by cleriche          #+#    #+#             */
+/*   Updated: 2024/11/25 09:54:24 by cleriche         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/*void	ft_capitalyse(unsigned int i, char *c)
-{
-    (void)i;
-    if (*c >= 'a' && *c <= 'z')
-        *c = *c -32;
-}*/
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
-	
+
 	i = 0;
 	while (s[i])
 	{
@@ -18,21 +23,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-/*#include <stdio.h> // Pour printf
-#include <stdlib.h> // Pour malloc et free
-
-int main(void)
-{
-    char str[] = "Je SuiS genTil";
-
-    printf("Avant : %s\n", str);
-        
-    // Appeler ft_striter avec la fonction ft_capitalyse
-    ft_striteri(str, ft_capitalyse);
-        
-    // Afficher le résultat
-    printf("Après: %s\n", str);
-    return (0);
-}*/
-
